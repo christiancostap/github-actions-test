@@ -8,7 +8,7 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
-          node -V
-          npm  -V
+          node -v
+          npm  -v
           python --version
 
