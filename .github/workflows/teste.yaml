@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo teste
+        run: echo "Hello World"
+      - name: multiline script
+        run: |
+          node -V
+          npm  -V
+          python --version
+
