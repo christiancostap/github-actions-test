@@ -8,6 +8,7 @@ jobs:
         run: echo "Mock um realizado"
   mock-dois:
     runs-on: ubuntu-latest
+    needs: [mock-um]
     steps:
       - name: "Mock: echo"
         run: echo "Mock dois realizado"
