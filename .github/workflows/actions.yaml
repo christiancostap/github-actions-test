@@ -1,11 +1,16 @@
 name: Actions Workflow
 
-on: [push]
+on: 
+  repository_dispatch:
+    types: [build]
 
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+      - name: payload
+        run: |
+          echo ${{ github.event.client_payload.env }}
       - name: List Files
         run: |
           pwd
