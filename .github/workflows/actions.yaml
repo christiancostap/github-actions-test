@@ -11,6 +11,7 @@ jobs:
       - name: payload
         run: |
           echo ${{ github.event.client_payload.env }}
+          echo ${{ github.event.client_payload.auth_present }}
       - name: List Files
         run: |
           pwd
