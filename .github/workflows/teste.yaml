@@ -1,15 +1,27 @@
 on: [push]
 
 jobs:
-  mock-um:
+  run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: "Mock: echo"
-        run: echo "Mock um realizado"
-  mock-dois:
-    runs-on: ubuntu-latest
-    needs: [mock-um]
+      - name: echo teste
+        run: echo "Hello World"
+      - name: multiline script
+        run: |
+          node -v
+          npm  -v
+          python --version
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+  run-windows-command:
+    runs-on: windows-latest
+    needs: ["run-shell-command"]
     steps:
-      - name: "Mock: echo"
-        run: echo "Mock dois realizado"
-  
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash 
