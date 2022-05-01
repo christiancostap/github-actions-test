@@ -1,4 +1,4 @@
-name: ENV Variables
+name: Issue Poster
 
 on: [push]
 
