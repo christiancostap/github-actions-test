@@ -1,0 +1,29 @@
+name: Subir arquivo para Repo
+
+on: [push]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest 
+    permissions:
+      issues: write 
+    steps:
+      - name: Arquivo com valor aleatório
+        run: |
+          echo "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          pws
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "meu-robo@bot.com.br"
+          git config --global user.name "meu-robo"
+          git fetch
+          git checkout master
+          git branch --set-upstream
+          git pull
+          git ls -a
+          echo $RANDOM >> random.txt
+          ls -a
+          git add -A
+          git commit -m "Random file"
+          git push
