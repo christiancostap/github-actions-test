@@ -5,8 +5,9 @@ on: [push]
 jobs:
   subir-arquivo:
     runs-on: ubuntu-latest 
-    permissions:
-      issues: write 
+    #permissions:
+      #issues: write
+      #contents: write
     steps:
       - name: Arquivo com valor aleatório
         run: |
