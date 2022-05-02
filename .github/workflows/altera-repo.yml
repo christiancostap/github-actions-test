@@ -3,7 +3,7 @@ name: Subir arquivo para Repo
 on: [push]
 
 jobs:
-  create_issue:
+  subir-arquivo:
     runs-on: ubuntu-latest 
     permissions:
       issues: write 
@@ -11,7 +11,7 @@ jobs:
       - name: Arquivo com valor aleatório
         run: |
           echo "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          pws
+          pwd
           ls -a
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
