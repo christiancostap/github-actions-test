@@ -1,21 +1,14 @@
-name: Issue Poster
+name: Functions
 
 on: [push]
 
 jobs:
-  create_issue:
+  functions:
     runs-on: ubuntu-latest 
-    permissions:
-      issues: write 
     steps:
-      - name: Create issue using REST API
+      - name: dump  
         run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' \
-          --fail
+          echo ${{ contains( 'helo', 'll' )}}
+          echo ${{ startsWith( 'helo', 'he' )}}
+          echo ${{ endsWith( 'helo', 'lo' )}}
+          echo ${{ format( 'Hello {0} {1} {2}', 'World', '!', '!' )}}
