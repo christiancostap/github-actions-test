@@ -1,0 +1,26 @@
+name: Functions
+
+on: [push, pull_request]
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: dump  
+        run: |
+          echo ${{ contains( 'hello', 'll' )}}
+          echo ${{ startsWith( 'hello', 'he' )}}
+          echo ${{ endsWith( 'hello', 'lo' )}}
+          echo ${{ format( 'Hello {0} {1} {2}', 'World', '!', '!' )}}
+  one:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Dumb echo
+        run: eccho "erro forçado"
+      - name: if failed
+        if: failure()
+        run: echo "previous step failed"
+      - name: Alway Runs
+        if: always()
+        run: echo "Alway runs, even if previous steps failed"
