@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: dump  
         run: |
-          echo ${{ contains( 'helo', 'll' )}}
-          echo ${{ startsWith( 'helo', 'he' )}}
-          echo ${{ endsWith( 'helo', 'lo' )}}
+          echo ${{ contains( 'hello', 'll' )}}
+          echo ${{ startsWith( 'hello', 'he' )}}
+          echo ${{ endsWith( 'hello', 'lo' )}}
           echo ${{ format( 'Hello {0} {1} {2}', 'World', '!', '!' )}}
