@@ -1,19 +1,19 @@
-name: If and Job Status checks
-
-on: [push, pull_request]
+name: Test matrix
+on: push
 
 jobs:
-  one:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [14, 16]
     steps:
-      - name: Dumb echo
-        run: eccho "erro forçado"
-      - name: if failed
-        if: failure()
-        run: echo "previous step failed"
-      - name: Alway Runs
-        if: always()
-        run: echo "Alway runs, even if previous steps failed"
-      - name: random step
-        run: echo "shouldn't run if previous step/s failed"
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
