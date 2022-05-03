@@ -24,3 +24,5 @@ jobs:
       - name: Alway Runs
         if: always()
         run: echo "Alway runs, even if previous steps failed"
+      - name: random step
+        run: echo "shouldn't run if previous step/s failed"
