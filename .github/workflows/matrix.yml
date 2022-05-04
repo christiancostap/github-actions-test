@@ -11,7 +11,7 @@ jobs:
         include:
           - os: ubuntu-latest
             node: 10
-            is_ubuntu: "false"
+            is_ubuntu: "true"
         exclude:
           - os: ubuntu-latest
             node: 16
