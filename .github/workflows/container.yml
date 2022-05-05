@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: log node version
         run: |
-          node -v
           cat /etc/os-release
       - name: Check dpkg
         run: dpkg --version
