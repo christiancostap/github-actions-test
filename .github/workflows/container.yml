@@ -10,3 +10,5 @@ jobs:
         run: |
           node -v
           cat /etc/os-release
+          dpkg --version
+          rpm --version
