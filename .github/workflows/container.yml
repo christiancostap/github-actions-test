@@ -4,7 +4,7 @@ on: push
 jobs:
   node-docker:
     runs-on: ubuntu-latest
-    container: bullseye
+    container: buster
     steps:
       - name: log node version
         run: |
