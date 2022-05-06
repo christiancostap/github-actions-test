@@ -17,6 +17,7 @@ jobs:
             node: 16
     env:
       IS_UBUNTU: ${{ matrix.is_ubuntu }}
+      TESTE: teste
     steps:
       - name: Log node version
         run: node -v
@@ -32,3 +33,5 @@ jobs:
         run: |
           echo "The operating system on the runner is $env:RUNNER_OS"
           echo "Token: ${{ secrets.GITHUB_TOKEN }}"
+          echo "The operating system on the runner is $env:TESTE"
+          echo "teste: ${{ env.TESTE }}"
