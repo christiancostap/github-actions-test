@@ -31,4 +31,4 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           echo "The operating system on the runner is $env:RUNNER_OS"
-          echo "Token: ${{ secrets.GITHUB_TOKEN }}""
+          echo "Token: ${{ secrets.GITHUB_TOKEN }}"
