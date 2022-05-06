@@ -27,3 +27,8 @@ jobs:
         run: node -v
       - name: check if ubuntu-latest
         run: echo $IS_UBUNTU
+      - name: checando variavel windows
+        if: runner.os == 'Windows'
+        run: |
+          echo The operating system on the runner is $env:RUNNER_OS
+          echo $RUNNER_OS
