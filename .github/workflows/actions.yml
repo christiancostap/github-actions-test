@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: ls -lah
-      - uses: ./.github/actions/hello
+      - uses: .github/actions/hello
         id: hello
         with:
           who-to-greet: "World"
