@@ -8773,7 +8773,7 @@ const core = __nccwpck_require__(4219);
 const github = __nccwpck_require__(5122);
 
 try {
-  // throw (new Error('some error message'));
+  throw (new Error('some error message'));
 
   const name = core.getInput('who-to-greet');
   console.log(`Hello ${name}`);
