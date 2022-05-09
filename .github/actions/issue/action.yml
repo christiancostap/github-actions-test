@@ -2,6 +2,9 @@ name: Create Issue
 author: christiancostap
 description: Opens github issue
 inputs:
+  token:
+    description: 'token'
+    required: true
   title:
     description: 'Who to greet'
     required: true

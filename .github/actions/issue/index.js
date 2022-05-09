@@ -9,7 +9,7 @@ try {
   const body = core.getInput('body');
   const assignees = core.getInput('assignees');
 
-  const octokit = github.getOctokit(token);
+  const octokit = new github.getOctokit(token);
 
   const res = octokit.issues.create({
     //owner: github.context.repo.owner,
@@ -21,6 +21,7 @@ try {
   });
 
   core.setOutput('issue', JSON.stringify(res.data))
+
 } catch (error) {
   core.setFailed(error.message);
 }
