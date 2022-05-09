@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: ls -lah
-      - uses: ./github/actions/issue
+      - uses: ./.github/actions/issue
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
