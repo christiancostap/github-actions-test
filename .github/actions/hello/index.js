@@ -20,6 +20,7 @@ try {
   console.log(JSON.stringify(github, null, '\t'));
   core.endGroup();
 
+  core.exportVariable('HELLO', 'hello o quê? Tá me tirando? Viaja ni mim não');
 } catch (error) {
   core.setFailed(error.message);
 }
