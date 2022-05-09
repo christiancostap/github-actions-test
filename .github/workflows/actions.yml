@@ -15,7 +15,7 @@ jobs:
           title: Title
           body: Body
           assignees: 'christiancostap,josephalves'
-        run: 
+      - run: 
           echo ${{ steps.issue.outputs.issue }}
       - uses: ./.github/actions/hello
         id: hello
