@@ -14,7 +14,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Title
           body: Body
-          assignees: 'christiancostap,josephalves'
+          # assignees: 'christiancostap,josephalves'
+          assignees: 'christiancostap'
       - run: 
           echo ${{ steps.issue.outputs.issue }}
       - uses: ./.github/actions/hello
