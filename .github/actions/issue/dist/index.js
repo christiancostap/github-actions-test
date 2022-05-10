@@ -8781,7 +8781,7 @@ async function run () {
     const assignees = core.getInput('assignees');
 
     const octokit = github.getOctokit(token);
-
+    console.log(octokit)
     const res = await octokit.issues.create({
       //owner: github.context.repo.owner,
       //repo: github.context.repo.repo,
@@ -8790,7 +8790,7 @@ async function run () {
       body,
       assignees: assignees ? assignees.split(',') : undefined
     });
-
+    console.log(res)
     core.setOutput('issue', JSON.stringify(res.data))
 
   } catch (error) {
